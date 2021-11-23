@@ -2,6 +2,7 @@ const popcat = document.getElementById('popcat');
 const counter = document.getElementById('counter');
 const showGIF = document.getElementById('showGIF');
 const closeGIF = document.getElementById('closeGIF');
+const mode = document.getElementById('mode');
 var i = 1;
 
 popcat.addEventListener('click', function() {
@@ -20,11 +21,17 @@ closeGIF.addEventListener('click', function() {
 
 function openMouth() {
     popcat.src = "public/assets/open-mouth.png";
+    mode.textContent = "POG";
+    mode.classList.add('text-red-600');
+    mode.classList.remove('text-green-600');
     popSound();
 }
 
 function closeMouth() {
     popcat.src = "public/assets/close-mouth.png";
+    mode.textContent = "Normal";
+    mode.classList.add('text-green-600');
+    mode.classList.remove('text-red-600');
 }
 
 function popSound() {
